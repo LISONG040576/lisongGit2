@@ -1,0 +1,23 @@
+platform:ios,'8.0'
+
+# loading提示
+pod'SVProgressHUD'
+# 基础框架
+pod 'ReactiveCocoa','~> 2.1.8'
+# 数据库
+pod "FMDB"
+# 图片加载
+pod "SDWebImage"
+# 布局工具
+pod "SDAutoLayout"
+pod 'Masonry'
+# 键盘自适应工具
+pod "IQKeyboardManager"
+# 全屏热区工具
+pod 'FDFullscreenPopGesture', '~> 1.1'
+# 列表页空白数据处理工具
+pod 'DZNEmptyDataSet'
+# 上下拉刷新工具
+pod "MJRefresh"
+
+pod "WebViewJavascriptBridge"

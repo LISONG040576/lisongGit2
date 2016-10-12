@@ -1,0 +1,44 @@
+//
+//  XCPrefix.pch
+//  XinXiaoChu
+//
+//  Created by 海尔智能-李松 on 16/7/23.
+//  Copyright © 2016年 海尔智能-李松. All rights reserved.
+//
+
+#ifndef XCPrefix_pch
+#define XCPrefix_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "objc/runtime.h"
+
+/*第三方库*/
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "SVProgressHUD.h"
+#import <Masonry/Masonry.h>
+#import "FMDB.h"
+#import "UIView+SDAutoLayout.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "MJRefresh.h"
+#import "HJCornerRadius.h"
+
+/*常量配置*/
+#import "XCConfig.h"
+#import "XCCommon.h"
+
+/*自定义类*/
+#import "XCUtilities.h"
+#import "XCHttpRequest.h"
+#import "XCBaseViewModel.h"
+#import "XCBaseModel.h"
+#import "XCBaseViewController.h"
+#import "XCMainTabBarController.h"
+#import "XCBaseTableViewController.h"
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* XCPrefix_pch */
