@@ -35,6 +35,8 @@
     [self.view addSubview:test1];
     
     
+    
+    
     UILabel *test2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     test2.centerX = kSCREEN_SIZE.width / 2.0 + 62;
     test2.centerY = kSCREEN_SIZE.height / 2.0;
