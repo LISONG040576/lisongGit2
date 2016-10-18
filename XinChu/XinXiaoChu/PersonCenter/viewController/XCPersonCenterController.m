@@ -23,38 +23,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    /** 设置空白页占位 **/
     self.emptyTitleStr = @"数据出错";
     
+    /** 添加数据 **/
     self.dataList = @[@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1,@1];
     
+    /** 刷新表视图 **/
     [self.tableView reloadData];
     
-    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_SIZE.width, kSCREEN_SIZE.height)];
+    
+    
+    /** 添加背景视图 **/
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_SIZE.width, 50)];
     imageV.image = ImageWithName(@"haha");
+    [self.view addSubview:imageV];
     
-    self.tableView.backgroundView = imageV;
+//    /** 设置下拉刷新控件 **/
+//    UIRefreshControl *rc = [[UIRefreshControl alloc] init];
+//    rc.tintColor = [UIColor whiteColor];
+//    rc.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉可以刷新哦～" attributes:@{NSFontAttributeName:Font_MN(10)}];
+//    [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+//    self.refreshControl = rc;
     
-//    NSString *path = [XCDataBase setUpDB];
     
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documents = [paths objectAtIndex:0];
-//    NSString *database_path = [documents stringByAppendingPathComponent:@"lisong.sqlite"];
-//    
-//    if (sqlite3_open([database_path UTF8String], &db) != SQLITE_OK) {
-//        sqlite3_close(db);
-//        NSLog(@"数据库打开失败");
-//    }
-//    
-//        NSString *path = [[XCDBManager shareInstance] copyFile2Documents:@"lisong.sqlite"];
     
-  
-    
-    UIRefreshControl *rc = [[UIRefreshControl alloc] init];
-    rc.tintColor = [UIColor whiteColor];
-//    rc.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉可以刷新哦～"];
-    rc.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉可以刷新哦～" attributes:@{NSFontAttributeName:Font_MN(10)}];
-    [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = rc;
 }
 
 - (void)refreshTableView{
@@ -83,14 +76,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cellid"];
-        cell.backgroundColor = [UIColor clearColor];
+//        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-//    if (indexPath.row % 2 == 0) {
-//        cell.backgroundColor = [UIColor blueColor];
-//    }else{
-//        cell.backgroundColor = [UIColor orangeColor];
-//    }
     
     return cell;
 }
@@ -110,6 +98,10 @@
     
 //    dismissHUDWithDelay(2.0);
     
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
 }
 

@@ -21,3 +21,5 @@ pod 'DZNEmptyDataSet'
 pod "MJRefresh"
 
 pod "WebViewJavascriptBridge"
+
+pod "PNChart"

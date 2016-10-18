@@ -10,6 +10,8 @@
 #import "UIViewController+XCNumberTypeJudge.h"
 #import "WebViewJavascriptBridge.h"
 #import "UIView+zy_Frame.h"
+#import "LoadingView.h"
+#import "PNChart.h"
 
 @interface XCCommunityController ()<UIWebViewDelegate>
 
@@ -26,7 +28,7 @@
     
     self.title = @"圈圈";
     
-   
+    /** 单侧圆角测试 **/
     UILabel *test1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     test1.centerX = kSCREEN_SIZE.width / 2.0;
     test1.centerY = kSCREEN_SIZE.height / 2.0;
@@ -34,15 +36,47 @@
     test1.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:test1];
     
-    
-    
-    
     UILabel *test2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     test2.centerX = kSCREEN_SIZE.width / 2.0 + 62;
     test2.centerY = kSCREEN_SIZE.height / 2.0;
     [test2 setCornerOnRight:3];
     test2.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:test2];
+    
+    /** 自定义loading **/
+    LoadingView *loadingView = [[LoadingView alloc] initWithFrame:CGRectMake(100, 100, 150, 40)];
+    [self.view addSubview:loadingView];
+    
+    /** 折线时图测试 **/
+    PNCircleChart *circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(50, 350, 100, 100)
+                                                                total:@100
+                                                              current:@50
+                                                            clockwise:YES];
+    circleChart.circleBackground.strokeColor = [UIColor grayColor].CGColor;
+    [circleChart strokeChart];
+    [self.view addSubview:circleChart];
+    
+    PNCircleChart *circleChart2 = [[PNCircleChart alloc] initWithFrame:CGRectMake(150, 350, 100, 100)
+                                                                 total:@100
+                                                               current:@50
+                                                             clockwise:YES
+                                                                shadow:YES
+                                                           shadowColor:[UIColor blackColor]];
+    [circleChart2 strokeChart];
+    [self.view addSubview:circleChart2];
+    
+    PNCircleChart *circleChart3 = [[PNCircleChart alloc] initWithFrame:CGRectMake(250, 350, 100, 100)
+                                                                 total:@100
+                                                               current:@50
+                                                             clockwise:YES
+                                                                shadow:YES
+                                                           shadowColor:[UIColor grayColor]
+                                                  displayCountingLabel:YES
+                                                     overrideLineWidth:@20];
+    [circleChart3 strokeChart];
+    [self.view addSubview:circleChart3];
+    
+    
     
 
 }

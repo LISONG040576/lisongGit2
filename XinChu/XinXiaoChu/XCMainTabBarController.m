@@ -39,11 +39,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UINavigationController *foodMenuNavigationVC     = [self viewControllerWithTitle:@"菜谱" image:@"tabar10" selectedImage:@"tabar11" className:@"XCFoodMenuController"];
-    UINavigationController *communityNavigationVC    = [self viewControllerWithTitle:@"圈圈" image:@"tabar20" selectedImage:@"tabar21" className:@"XCCommunityController"];
-    UINavigationController *foodManageNavigationVC   = [self viewControllerWithTitle:@"食材管理" image:@"tabar30" selectedImage:@"tabar31" className:@"XCFoodManageController"];
-    UINavigationController *refrigeratorNavigationVC = [self viewControllerWithTitle:@"冰箱控制" image:@"tabar40" selectedImage:@"tabar41" className:@"XCRefrigeratorController"];
-    UINavigationController *personCenterNavigationVC = [self viewControllerWithTitle:@"我的" image:@"tabar50" selectedImage:@"tabar51" className:@"XCPersonCenterController"];
+    UINavigationController *foodMenuNavigationVC     = [self viewControllerWithTitle:@"菜谱"
+                                                                               image:@"tabar10"
+                                                                       selectedImage:@"tabar11"
+                                                                           className:@"XCFoodMenuController"];
+    UINavigationController *communityNavigationVC    = [self viewControllerWithTitle:@"圈圈"
+                                                                               image:@"tabar20"
+                                                                       selectedImage:@"tabar21"
+                                                                           className:@"XCCommunityController"];
+    UINavigationController *foodManageNavigationVC   = [self viewControllerWithTitle:@"食材管理"
+                                                                               image:@"tabar30"
+                                                                       selectedImage:@"tabar31"
+                                                                           className:@"XCFoodManageController"];
+    UINavigationController *refrigeratorNavigationVC = [self viewControllerWithTitle:@"冰箱控制"
+                                                                               image:@"tabar40"
+                                                                       selectedImage:@"tabar41"
+                                                                           className:@"XCRefrigeratorController"];
+    UINavigationController *personCenterNavigationVC = [self viewControllerWithTitle:@"我的"
+                                                                               image:@"tabar50"
+                                                                       selectedImage:@"tabar51"
+                                                                           className:@"XCPersonCenterController"];
     
     NSArray *viewControllers = @[foodMenuNavigationVC,
                                  communityNavigationVC,
@@ -74,7 +89,7 @@
     Class cls = NSClassFromString(className);
     
     XCBaseViewController *viewController = [[cls alloc] init];
-    viewController.title = title;
+    viewController.title  = title;
     UIImage * normalImage = [[UIImage imageNamed:imageString] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage * selectedImage = [[UIImage imageNamed:selectedImageString] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:normalImage selectedImage:selectedImage];
